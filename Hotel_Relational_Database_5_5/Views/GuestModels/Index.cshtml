@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Hotel_Relational_Database_5_5.Models.GuestModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Guests</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    @*<div class="panel-heading">Panel heading</div>*@
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GuestID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalGuests)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuestID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalGuests)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GuestID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.GuestID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GuestID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

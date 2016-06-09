@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Hotel_Relational_Database_5_5.Models.RoomModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Rooms</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-img-top">
+                    <img src="~/images/hotelroom.jpg" alt="Hotel Room">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">Room @Html.DisplayFor(modelItem => item.RoomNumber)</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Price per night: $@Html.DisplayFor(modelItem => item.RoomPrice)
+                    </li>
+                    <li class="list-group-item">
+                        Maximum Occupancy: @Html.DisplayFor(modelItem => item.MaxOccupancy)
+                    </li>
+                </ul>
+                <div class="card-block">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RoomID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RoomID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RoomID })
+                </div>
+            </div>
+        </div>
+
+
+        @*<div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Room @Html.DisplayFor(modelItem => item.RoomNumber)</h3>
+                            <img src="~/images/hotelroom.jpg" />
+                            <p>
+                                Price per night: $@Html.DisplayFor(modelItem => item.RoomPrice)<br />
+                                Maximum Occupancy: @Html.DisplayFor(modelItem => item.MaxOccupancy)
+                            </p>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.RoomID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.RoomID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.RoomID })
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+    }
+</div>

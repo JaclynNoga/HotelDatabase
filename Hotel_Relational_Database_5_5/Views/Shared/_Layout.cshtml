@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Hotel WCCI</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great|Unica+One' rel='stylesheet' type='text/css'>
+
+    <style>
+        .navbar {
+            /*background: url('../../images/nav_background.jpg') center center;*/
+            background-image: url('../../images/tree_background.jpg');
+            font-family: 'Unica One', cursive;
+            font-size:large;
+        }
+
+        .navbar-brand{
+            font-size:larger;
+        }
+
+        body {
+            background: url('../../images/nav_background.jpg') center center;
+            padding-bottom: 0;
+        }
+
+        .body-content {
+            background-color: white;
+            min-height: 550px;
+        }
+
+        h1, h2 {
+            font-family: 'Fredericka the Great', cursive;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                    @Html.ActionLink("Hotel WCCI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Rooms", "Index", "RoomModels")</li>
+                    <li>@Html.ActionLink("Guests", "Index", "GuestModels")</li>
+                    <li>@Html.ActionLink("Reservations", "Index", "ReservationModels")</li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer class="panel-footer">
+        <p>&copy; @DateTime.Now.Year - Hotel WCCI</p>
+    </footer>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

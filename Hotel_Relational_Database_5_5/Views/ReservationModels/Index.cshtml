@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Hotel_Relational_Database_5_5.Models.ReservationModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Reservations</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    @*<div class="panel-heading">Panel heading</div>*@
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest.TotalGuests)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Guest.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Guest.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Guest.TotalGuests)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ReservationID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ReservationID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ReservationID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
